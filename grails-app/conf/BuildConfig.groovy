@@ -33,23 +33,30 @@ grails.project.dependency.resolution = {
         mavenCentral()
         mavenRepo "http://repository.codehaus.org"
         mavenRepo "http://maven.ala.org.au/repository/"
-    }
+        mavenRepo "http://nexus.ala.org.au/content/repositories/releases/"
+        //mavenRepo ("http://maven.ala.org.au/repository") {
+        //    updatePolicy 'always'
+        //}
+        mavenRepo "http://maven.tmatesoft.com/content/repositories/releases/"   }
 
     dependencies {
         runtime 'mysql:mysql-connector-java:5.1.5'
     }
 
     plugins {
+        build ":release:3.0.1"
         build ":tomcat:7.0.52.1"
 
         compile ":marshallers:0.6"          //for customized domain object marshalling with json
         compile ':cache:1.1.2'
         runtime ":hibernate:3.6.10.11"
         runtime ":jquery:1.8.3"
-        runtime ":resources:1.2.7"
+        runtime ":resources:1.2.8"
         runtime ":audit-logging:0.5.5.3"
         compile ":cache-headers:1.1.6"
         runtime ":richui:0.8"
         runtime ":tiny-mce:3.4.4"
+        runtime ":cached-resources:1.0"
+        runtime ":ala-web-theme:0.2.4"
     }
 }

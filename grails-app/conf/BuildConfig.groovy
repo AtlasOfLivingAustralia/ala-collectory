@@ -31,12 +31,8 @@ grails.project.dependency.resolution = {
         mavenLocal()
         grailsCentral()
         mavenCentral()
-        mavenRepo "http://repository.codehaus.org"
         mavenRepo "http://maven.ala.org.au/repository/"
         mavenRepo "http://nexus.ala.org.au/content/repositories/releases/"
-        //mavenRepo ("http://maven.ala.org.au/repository") {
-        //    updatePolicy 'always'
-        //}
         mavenRepo "http://maven.tmatesoft.com/content/repositories/releases/"   }
 
     dependencies {
@@ -57,6 +53,6 @@ grails.project.dependency.resolution = {
         runtime ":richui:0.8"
         runtime ":tiny-mce:3.4.4"
         runtime ":cached-resources:1.0"
-        runtime ":ala-web-theme:0.2.4"
+        runtime ":ala-web-theme:0.8.1"
     }
 }

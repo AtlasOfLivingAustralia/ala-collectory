@@ -15,28 +15,40 @@ println "[${appName}] (*) grails.config.locations = ${grails.config.locations}"
 println "default_config = ${default_config}"
 
 /******************************************************************************\
-*  SKINNING
-\******************************************************************************/
-if (!ala.skin) {
-    ala.skin = 'ala2'
-}
-if (!skin.orgNameLong) {
-    skin.orgNameLong = "Atlas of Living Australia"
-}
-if (!skin.orgNameShort) {
-    skin.orgNameShort = "ALA"
-}
-if (!skin.includeBaseUrl) {
-    // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
-    skin.includeBaseUrl = true
-}
-if (!skin.headerUrl) {
-    skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
-}
-if (!skin.footerUrl) {
-    skin.footerUrl = "classpath:resources/generic-footer.jsp" // can be external URL
-}
-skin.fluidLayout=false
+ *  SKINNING
+ \******************************************************************************/
+skin.layout = 'ala2'
+skin.orgNameLong = "Atlas of Living Australia"
+skin.orgNameShort = "ALA"
+// whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
+skin.includeBaseUrl = true
+skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/"
+skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
+skin.footerUrl = "classpath:resources/generic-footer.jsp" // can be external URL
+skin.fluidLayout = true // true or false
+skin.useAlaSpatialPortal = true
+skin.useAlaBie = true
+skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
+test.var = "ala-collectory"
+
+/******************************************************************************\
+ *  CAS SETTINGS
+ *
+ *  NOTE: Some of these will be ignored if default_config exists
+ \******************************************************************************/
+grails.serverURL = 'http://localhost:8080/ala-collectory'
+serverName = 'http://localhost:8080'
+security.cas.appServerName = "http://localhost:8080/ala-collectory"
+security.cas.casServerName = 'https://auth.ala.org.au'
+security.cas.uriFilterPattern = '/admin, /admin/.*'
+security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
+security.cas.uriExclusionFilterPattern = '/images.*,/css.*,/js.*'
+security.cas.loginUrl = 'https://auth.ala.org.au/cas/login'
+security.cas.logoutUrl = 'https://auth.ala.org.au/cas/logout'
+security.cas.casServerUrlPrefix = 'https://auth.ala.org.au/cas'
+security.cas.bypass = false // set to true for non-ALA deployment
+auth.admin_role = "ROLE_ADMIN"
+
 
 /******************************************************************************\
 *  EXTERNAL SERVERS
@@ -226,11 +238,12 @@ auditLog.verbose = false
 
 environments {
     development {
-        grails.logging.jul.usebridge = true
+        serverName = 'http://localhost:8080'
+        grails.serverURL = 'http://localhost:8080/' + appName
+    }
+    test {
     }
     production {
-        grails.logging.jul.usebridge = false
-        // TODO: grails.serverURL = "http://www.changeme.com"
     }
 }
 
@@ -248,27 +261,3 @@ log4j = {
            'org.hibernate',
            'net.sf.ehcache.hibernate'
 }
-
-// Uncomment and edit the following lines to start using Grails encoding & escaping improvements
-
-/* remove this line 
-// GSP settings
-grails {
-    views {
-        gsp {
-            encoding = 'UTF-8'
-            htmlcodec = 'xml' // use xml escaping instead of HTML4 escaping
-            codecs {
-                expression = 'html' // escapes values inside null
-                scriptlet = 'none' // escapes output from scriptlets in GSPs
-                taglib = 'none' // escapes output from taglibs
-                staticparts = 'none' // escapes output from static template parts
-            }
-        }
-        // escapes all not-encoded output at final stage of outputting
-        filteringCodecForContentType {
-            //'text/html' = 'html'
-        }
-    }
-}
-remove this line */

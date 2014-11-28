@@ -36,9 +36,9 @@ test.var = "ala-collectory"
  *
  *  NOTE: Some of these will be ignored if default_config exists
  \******************************************************************************/
-grails.serverURL = 'http://localhost:8080/ala-collectory'
-serverName = 'http://localhost:8080'
-security.cas.appServerName = "http://localhost:8080/ala-collectory"
+grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
+serverName = 'http://devt.ala.org.au:8080'
+security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
@@ -180,6 +180,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 // What URL patterns should be processed by the resources plugin
 //grails.resources.uri.prefix = ''
 grails.resources.adhoc.patterns = ['/images/*', '/data/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.work.dir = "/data/${appName}/cache/"
 
 // The default codec used to encode data with ${}
 grails.views.default.codec="html" // none, html, base64
@@ -203,7 +204,7 @@ grails.validateable.packages = ['au.org.ala.collectory']
 
 /******* location of images **********/
 // default location for images
-repository.location.images = '/data/generic-collectory/data'
+repository.location.images = '/data/ala-collectory/data'
 
 
 disableOverviewMap=false
@@ -238,8 +239,8 @@ auditLog.verbose = false
 
 environments {
     development {
-        serverName = 'http://localhost:8080'
-        grails.serverURL = 'http://localhost:8080/' + appName
+        serverName = 'http://devt.ala.org.au:8080'
+        grails.serverURL = 'http://devt.ala.org.au:8080/' + appName
     }
     test {
     }
@@ -247,17 +248,61 @@ environments {
     }
 }
 
-// log4j configuration
+logging.dir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat6')
+
+//// log4j configuration
+//log4j = {
+//    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
+//           'org.codehaus.groovy.grails.web.pages',          // GSP
+//           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+//           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+//           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+//           'org.codehaus.groovy.grails.commons',            // core / classloading
+//           'org.codehaus.groovy.grails.plugins',            // plugins
+//           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+//           'org.springframework',
+//           'org.hibernate',
+//           'net.sf.ehcache.hibernate'
+//}
+
 log4j = {
-    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
-           'org.codehaus.groovy.grails.web.pages',          // GSP
-           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-           'org.codehaus.groovy.grails.commons',            // core / classloading
-           'org.codehaus.groovy.grails.plugins',            // plugins
-           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-           'org.springframework',
-           'org.hibernate',
-           'net.sf.ehcache.hibernate'
+    appenders {
+        environments {
+            production {
+                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: logging.dir + "/ala-collectory.log", threshold: org.apache.log4j.Level.ERROR, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
+                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.WARN
+            }
+            development {
+                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.DEBUG
+            }
+            test {
+                console name: "stdout", layout: pattern(conversionPattern: "%d %-5p [%c{1}]  %m%n"), threshold: org.apache.log4j.Level.INFO
+            }
+        }
+    }
+
+    root {
+        // change the root logger to my tomcatLog file
+        error 'tomcatLog'
+        warn 'tomcatLog'
+        additivity = true
+    }
+
+    error   'org.codehaus.groovy.grails.web.servlet',        // controllers
+            'org.codehaus.groovy.grails.web.pages',          // GSP
+            'org.codehaus.groovy.grails.web.sitemesh',       // layouts
+            'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
+            'org.codehaus.groovy.grails.web.mapping',        // URL mapping
+            'org.codehaus.groovy.grails.commons',            // core / classloading
+            'org.codehaus.groovy.grails.plugins',            // plugins
+            'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
+            'org.springframework',
+            'org.hibernate',
+            'net.sf.ehcache.hibernate'
+    info    'grails.app'
+    debug   'grails.app',
+            'grails.app.services',
+            //'grails.app.taglib',
+            'au.org.ala.cas',
+            'au.org.ala.biocache.hubs'
 }

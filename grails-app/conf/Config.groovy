@@ -1,5 +1,7 @@
 grails.project.groupId = "au.org.ala" // change this to alter the default package name and Maven publishing destination
 
+grails.appName = "${appName}"
+
 default_config = "/data/${appName}/config/${appName}-config.properties"
 if(!grails.config.locations || !(grails.config.locations instanceof List)) {
     grails.config.locations = []

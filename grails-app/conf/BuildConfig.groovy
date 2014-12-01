@@ -53,8 +53,7 @@ grails.project.dependency.resolution = {
         runtime ":richui:0.8"
         runtime ":tiny-mce:3.4.4"
         runtime ":cached-resources:1.0"
-        runtime ":cors:1.1.6"
+        //runtime ":cors:1.1.6"
         runtime ":ala-web-theme:0.8.1"
-        //runtime ":ala-web-theme:0.2.4"
     }
 }

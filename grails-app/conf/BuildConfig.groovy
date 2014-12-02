@@ -6,8 +6,6 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 
-grails.plugin.location.'collectory-plugin' = "../collectory-plugin"
-
 grails.project.fork = [
     test:   false,
     run:    false,
@@ -33,6 +31,7 @@ grails.project.dependency.resolution = {
         mavenCentral()
         mavenRepo "http://maven.ala.org.au/repository/"
         mavenRepo "http://nexus.ala.org.au/content/repositories/releases/"
+        mavenRepo "http://nexus.ala.org.au/content/repositories/snapshots/"
         mavenRepo "http://maven.tmatesoft.com/content/repositories/releases/"   }
 
     dependencies {
@@ -51,6 +50,7 @@ grails.project.dependency.resolution = {
         runtime ":audit-logging:0.5.5.3"
         compile ":cache-headers:1.1.6"
         runtime ":richui:0.8"
+        runtime ":collectory:1.0-SNAPSHOT"
         runtime ":tiny-mce:3.4.4"
         runtime ":cached-resources:1.0"
         runtime ":ala-web-theme:0.8.1"

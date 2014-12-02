@@ -13,6 +13,8 @@ grails.project.fork = [
         war:        false
 ]
 
+grails.project.dependency.resolver = "maven"
+
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -22,17 +24,11 @@ grails.project.dependency.resolution = {
     legacyResolve false // whether to do a secondary resolve on plugin installation, not advised and here for backwards compatibility
 
     repositories {
-        inherits true // Whether to inherit repository definitions from plugins
-
-        grailsPlugins()
-        grailsHome()
         mavenLocal()
-        grailsCentral()
-        mavenCentral()
-        mavenRepo "http://maven.ala.org.au/repository/"
-        mavenRepo "http://nexus.ala.org.au/content/repositories/releases/"
-        mavenRepo "http://nexus.ala.org.au/content/repositories/snapshots/"
-        mavenRepo "http://maven.tmatesoft.com/content/repositories/releases/"   }
+        mavenRepo("http://nexus.ala.org.au/content/groups/public/") {
+            updatePolicy 'always'
+        }
+    }
 
     dependencies {
         runtime 'mysql:mysql-connector-java:5.1.5'

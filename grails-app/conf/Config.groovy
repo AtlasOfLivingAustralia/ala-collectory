@@ -40,6 +40,7 @@ test.var = "ala-collectory"
  \******************************************************************************/
 grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
 serverName = 'http://devt.ala.org.au:8080'
+
 security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
@@ -245,8 +246,12 @@ environments {
         grails.serverURL = 'http://devt.ala.org.au:8080/' + appName
     }
     test {
+        serverName = 'http://130.56.248.132'
+        grails.serverURL = 'http://130.56.248.132/' + appName
     }
     production {
+        serverName = 'http://130.56.248.132'
+        grails.serverURL = 'http://130.56.248.132/' + appName
     }
 }
 

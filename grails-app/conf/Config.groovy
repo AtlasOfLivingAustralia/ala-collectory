@@ -38,10 +38,10 @@ test.var = "ala-collectory"
  *
  *  NOTE: Some of these will be ignored if default_config exists
  \******************************************************************************/
-grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
-serverName = 'http://devt.ala.org.au:8080'
+//grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
+//serverName = 'http://devt.ala.org.au:8080'
 
-security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
+//security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"

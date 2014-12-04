@@ -49,6 +49,6 @@ grails.project.dependency.resolution = {
         runtime ":collectory:1.0-SNAPSHOT"
         runtime ":tiny-mce:3.4.4"
         runtime ":cached-resources:1.0"
-        runtime ":ala-web-theme:0.8.1"
+        runtime ":ala-web-theme:0.8.4"
     }
 }

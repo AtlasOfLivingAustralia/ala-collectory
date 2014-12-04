@@ -209,6 +209,7 @@ grails.validateable.packages = ['au.org.ala.collectory']
 // default location for images
 repository.location.images = '/data/ala-collectory/data'
 
+grails.plugins.cookie.cookieage.default = 360 * 24 * 60 * 60
 
 disableOverviewMap=false
 disableAlertLinks=false
@@ -250,8 +251,10 @@ environments {
         grails.serverURL = 'http://130.56.248.132/' + appName
     }
     production {
-        serverName = 'http://130.56.248.132'
+        serverName = 'http://130.56.248.132/'
         grails.serverURL = 'http://130.56.248.132/' + appName
+        security.cas.appServerName = serverName
+        security.cas.contextPath = "/${appName}"
     }
 }
 

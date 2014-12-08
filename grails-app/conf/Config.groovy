@@ -38,10 +38,10 @@ test.var = "ala-collectory"
  *
  *  NOTE: Some of these will be ignored if default_config exists
  \******************************************************************************/
-grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
-serverName = 'http://devt.ala.org.au:8080'
+//grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
+//serverName = 'http://devt.ala.org.au:8080'
 
-security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
+//security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
@@ -251,29 +251,14 @@ environments {
         grails.serverURL = 'http://130.56.248.132/' + appName
     }
     production {
-        serverName = 'http://130.56.248.132/'
-        grails.serverURL = 'http://130.56.248.132/' + appName
+        serverName = 'http://collections-test.ala.org.au/'
+        grails.serverURL = 'http://collections-test.ala.org.au/' + appName
         security.cas.appServerName = serverName
         security.cas.contextPath = "/${appName}"
     }
 }
 
 logging.dir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat6')
-
-//// log4j configuration
-//log4j = {
-//    error  'org.codehaus.groovy.grails.web.servlet',        // controllers
-//           'org.codehaus.groovy.grails.web.pages',          // GSP
-//           'org.codehaus.groovy.grails.web.sitemesh',       // layouts
-//           'org.codehaus.groovy.grails.web.mapping.filter', // URL mapping
-//           'org.codehaus.groovy.grails.web.mapping',        // URL mapping
-//           'org.codehaus.groovy.grails.commons',            // core / classloading
-//           'org.codehaus.groovy.grails.plugins',            // plugins
-//           'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
-//           'org.springframework',
-//           'org.hibernate',
-//           'net.sf.ehcache.hibernate'
-//}
 
 log4j = {
     appenders {

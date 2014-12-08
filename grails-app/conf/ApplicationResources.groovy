@@ -1,4 +1,10 @@
 modules = {
+    application {
+        dependsOn 'collectory' //
+        resource url:'js/application.js'
+        resource url: [dir:'css', file:'generic.css']
+    }
+
     generic {
         dependsOn 'collectory' //
         resource url:'js/application.js'
@@ -6,7 +12,7 @@ modules = {
     }
 
     ala {
-        dependsOn 'bootstrapLocal' // from ala-web-theme plugin
+        dependsOn 'bootstrapLocal, collectory' // from ala-web-theme plugin
     }
 
     bootstrapLocal {

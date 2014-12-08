@@ -251,8 +251,8 @@ environments {
         grails.serverURL = 'http://130.56.248.132/' + appName
     }
     production {
-        serverName = 'http://130.56.248.132/'
-        grails.serverURL = 'http://130.56.248.132/' + appName
+        serverName = 'http://collections-test.ala.org.au/'
+        grails.serverURL = 'http://collections-test.ala.org.au/' + appName
         security.cas.appServerName = serverName
         security.cas.contextPath = "/${appName}"
     }

@@ -6,6 +6,8 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 
+//grails.plugin.location.'collectory-plugin' = "../collectory-plugin"
+
 grails.project.fork = [
     test:   false,
     run:    false,

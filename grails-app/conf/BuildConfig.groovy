@@ -6,11 +6,13 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
 
+grails.plugin.location."collectory-plugin" = "../collectory-plugin"
+
 grails.project.fork = [
-    test:   false,
-    run:    false,
-        console:    false,
-        war:        false
+    test:       false,
+    run:        false,
+    console:    false,
+    war:        false
 ]
 
 grails.project.dependency.resolver = "maven"
@@ -35,19 +37,13 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build ":release:3.0.1"
-        build ":tomcat:7.0.52.1"
 
-        compile ':cache:1.1.2'
-        runtime ":hibernate:3.6.10.11"
-        runtime ":jquery:1.8.3"
-        runtime ":resources:1.2.8"
-        runtime ":audit-logging:0.5.5.3"
-        compile ":cache-headers:1.1.6"
-        runtime ":richui:0.8"
-        runtime ":collectory:1.0-SNAPSHOT"
-        runtime ":tiny-mce:3.4.4"
-        runtime ":cached-resources:1.0"
-        runtime ":ala-web-theme:0.8.4"
+//        runtime ":collectory:1.0-SNAPSHOT"
+//        runtime ":cached-resources:1.0"
+
+        runtime ":ala-bootstrap2:2.1"
+        runtime (":ala-auth:1.2") {
+            exclude "servlet-api"
+        }
     }
 }

@@ -19,7 +19,10 @@ println "default_config = ${default_config}"
 /******************************************************************************\
  *  SKINNING
  \******************************************************************************/
-skin.layout = 'ala2'
+if(!skin.layout){
+    skin.layout = 'ala'
+}
+
 skin.orgNameLong = "Atlas of Living Australia"
 skin.orgNameShort = "ALA"
 // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
@@ -38,10 +41,6 @@ test.var = "ala-collectory"
  *
  *  NOTE: Some of these will be ignored if default_config exists
  \******************************************************************************/
-//grails.serverURL = 'http://devt.ala.org.au:8080/ala-collectory'
-//serverName = 'http://devt.ala.org.au:8080'
-
-//security.cas.appServerName = "http://devt.ala.org.au:8080/ala-collectory"
 security.cas.casServerName = 'https://auth.ala.org.au'
 security.cas.uriFilterPattern = '/admin, /admin/.*'
 security.cas.authenticateOnlyIfLoggedInPattern = "/occurrences/(?!.+userAssertions|facet.+).+,/explore/your-area"
@@ -74,16 +73,12 @@ if (!spatial.baseURL) {
 if (!ala.baseURL) {
     ala.baseURL = "http://www.ala.org.au"
 }
-if (!headerAndFooter.baseURL) {
-    headerAndFooter.baseURL = "http://www2.ala.org.au/commonui"
-}
 if(!alertUrl){
     alertUrl = "http://alerts.ala.org.au/"
 }
 if(!speciesListToolUrl){
     speciesListToolUrl = "http://lists.ala.org.au/speciesListItem/list/"
 }
-
 if(!alertResourceName){
     alertResourceName = "Atlas"
 }
@@ -158,7 +153,7 @@ if(!eml.country){
 if(!eml.electronicMailAddress){
     eml.electronicMailAddress = "info@ala.org.au"
 }
-//
+
 ///******* standard grails **********/
 grails.project.groupId = 'au.org.ala' // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format
@@ -182,7 +177,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 
 // What URL patterns should be processed by the resources plugin
 //grails.resources.uri.prefix = ''
-grails.resources.adhoc.patterns = ['/images/*', '/data/*', '/css/*', '/js/*', '/plugins/*']
+grails.resources.adhoc.patterns = ['/img/*', '/images/*', '/data/*', '/css/*', '/js/OpenLayers/**', '/js/**', '/plugins/**']
 grails.resources.work.dir = "/data/${appName}/cache/"
 
 // The default codec used to encode data with ${}
@@ -243,18 +238,12 @@ auditLog.verbose = false
 
 environments {
     development {
-        serverName = 'http://devt.ala.org.au:8080'
-        grails.serverURL = 'http://devt.ala.org.au:8080/' + appName
+        serverName = 'http://dev.ala.org.au:8080'
+        grails.serverURL = 'http://dev.ala.org.au:8080/' + appName
     }
     test {
-        serverName = 'http://130.56.248.132'
-        grails.serverURL = 'http://130.56.248.132/' + appName
     }
     production {
-        serverName = 'http://collections-test.ala.org.au/'
-        grails.serverURL = 'http://collections-test.ala.org.au/' + appName
-        security.cas.appServerName = serverName
-        security.cas.contextPath = "/${appName}"
     }
 }
 
@@ -298,7 +287,6 @@ log4j = {
     info    'grails.app'
     debug   'grails.app',
             'grails.app.services',
-            //'grails.app.taglib',
             'au.org.ala.cas',
             'au.org.ala.biocache.hubs'
 }

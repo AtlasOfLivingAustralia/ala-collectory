@@ -5,8 +5,7 @@ grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
 grails.project.target.level = 1.6
 grails.project.source.level = 1.6
-
-grails.plugin.location."collectory-plugin" = "../collectory-plugin"
+//grails.plugin.location."collectory-plugin" = "../collectory-plugin"
 
 grails.project.fork = [
     test:       false,
@@ -37,10 +36,8 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-
-//        runtime ":collectory:1.0-SNAPSHOT"
-//        runtime ":cached-resources:1.0"
-
+        runtime ":collectory:1.0"
+        runtime ":cached-resources:1.0"
         runtime ":ala-bootstrap2:2.1"
         runtime (":ala-auth:1.2") {
             exclude "servlet-api"

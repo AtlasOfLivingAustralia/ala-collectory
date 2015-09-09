@@ -1,6 +1,5 @@
 <g:set var="orgNameLong" value="${grailsApplication.config.skin.orgNameLong}"/>
 <g:set var="orgNameShort" value="${grailsApplication.config.skin.orgNameShort}"/>
-%{--Uses the layout provided by the ala-bootstrap2 plugin--}%
 <g:applyLayout name="main" >
   <head>
     <r:script type="text/javascript" disposition="head">

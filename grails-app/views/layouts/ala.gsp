@@ -1,10 +1,11 @@
 <g:set var="orgNameLong" value="${grailsApplication.config.skin.orgNameLong}"/>
 <g:set var="orgNameShort" value="${grailsApplication.config.skin.orgNameShort}"/>
-<g:applyLayout name="main" >
+<g:applyLayout name="main">
   <head>
     <r:script type="text/javascript" disposition="head">
       var COLLECTORY_CONF = { contextPath: "${request.contextPath}", locale: "${request.locale}" }
     </r:script>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="${g.createLink(uri:"/feed.xml", absolute: true)}" />
     <r:require modules="jquery, jquery-migration, jquery_i18n, bootstrap,  application, collectory" />
     <g:layoutHead/>
   </head>

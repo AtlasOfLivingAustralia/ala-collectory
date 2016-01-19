@@ -256,7 +256,7 @@ log4j = {
     appenders {
         environments {
             production {
-                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: loggingDir + "/ala-collectory.log",
+                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: loggingDir + "/${appName}.log",
                         threshold: org.apache.log4j.Level.INFO, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
             }
             development {
@@ -274,7 +274,6 @@ log4j = {
         warn 'tomcatLog'
         additivity = true
     }
-
     error   'org.codehaus.groovy.grails.web.servlet',        // controllers
             'org.codehaus.groovy.grails.web.pages',          // GSP
             'org.codehaus.groovy.grails.web.sitemesh',       // layouts
@@ -285,11 +284,11 @@ log4j = {
             'org.codehaus.groovy.grails.orm.hibernate',      // hibernate integration
             'org.springframework',
             'org.hibernate',
-            'net.sf.ehcache.hibernate'
+            'net.sf.ehcache.hibernate',
+            'grails.app.service.org.grails.plugin.resource',
+            'au.org.ala.bootstrap2'
     info    'grails.app'
-    debug   'grails.app',
-            'grails.app.services',
-            'au.org.ala.cas',
+    debug   'grails.app.services'
             'au.org.ala.biocache.hubs'
 }
 // Uncomment and edit the following lines to start using Grails encoding & escaping improvements

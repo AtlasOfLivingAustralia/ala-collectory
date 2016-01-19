@@ -288,8 +288,10 @@ log4j = {
             'grails.app.service.org.grails.plugin.resource',
             'au.org.ala.bootstrap2'
     info    'grails.app'
-    debug   'grails.app.services'
-            'au.org.ala.biocache.hubs'
+    debug   'grails.app.services',
+            'grails.app.controllers',
+            'grails.app.services',
+            'au.org.ala.collectory'
 }
 // Uncomment and edit the following lines to start using Grails encoding & escaping improvements
 

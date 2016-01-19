@@ -46,5 +46,6 @@ grails.project.dependency.resolution = {
             exclude "servlet-api"
         }
         build ':tomcat:7.0.54'
+        compile ":build-info:1.2.6"
     }
 }

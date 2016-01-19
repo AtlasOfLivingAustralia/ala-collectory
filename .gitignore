@@ -3,6 +3,7 @@ target/*
 .idea/*
 out
 target
+.slcache/*
 
 web-app/css/errors.css
 

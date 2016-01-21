@@ -1,6 +1,8 @@
 grails.project.groupId = "au.org.ala" // change this to alter the default package name and Maven publishing destination
 
-grails.appName = "${appName}"
+appName = "ala-collectory"
+
+grails.appName = appName
 
 default_config = "/data/${appName}/config/${appName}-config.properties"
 if(!grails.config.locations || !(grails.config.locations instanceof List)) {
@@ -248,7 +250,7 @@ environments {
 }
 
 def loggingDir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat6')
-if(new File(loggingDir).exists()){
+if(!new File(loggingDir).exists()){
     loggingDir = "/tmp"
 }
 
@@ -256,7 +258,7 @@ log4j = {
     appenders {
         environments {
             production {
-                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: loggingDir + "/${appName}.log",
+                rollingFile name: "tomcatLog", maxFileSize: 102400000, file: loggingDir + "/ala-collectory.log",
                         threshold: org.apache.log4j.Level.INFO, layout: pattern(conversionPattern: "%d %-5p [%c{1}] %m%n")
             }
             development {

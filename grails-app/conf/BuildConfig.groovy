@@ -41,8 +41,8 @@ grails.project.dependency.resolution = {
         runtime ":collectory:1.9.0-SNAPSHOT"
         runtime ":cached-resources:1.0"
         build   ":release:3.0.1"
-        runtime ":ala-bootstrap2:2.4.2"
-        runtime (":ala-auth:1.3.3") {
+        runtime ":ala-bootstrap3:2.0.0-SNAPSHOT"
+        runtime (":ala-auth:2.2-SNAPSHOT") {
             exclude "servlet-api"
         }
         build ':tomcat:7.0.54'

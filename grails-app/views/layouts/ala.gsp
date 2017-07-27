@@ -6,7 +6,11 @@
     <meta name="breadcrumb" content="${pageProperty(name: 'meta.breadcrumb', default: pageProperty(name: 'title').split('\\|')[0].decodeHTML())}"/>
     <meta name="breadcrumbParent" content="${pageProperty(name: 'meta.breadcrumbParent', default: "${createLink(action: 'map', controller: 'public')},${message(code: 'breadcrumb.collections')}")}"/>
     <r:script type="text/javascript" disposition="head">
-      var COLLECTORY_CONF = { contextPath: "${request.contextPath}", locale: "${request.locale}" }
+      var COLLECTORY_CONF = {
+        contextPath: "${request.contextPath}",
+        locale: "${request.locale}",
+        cartodbPattern: "${grailsApplication.config.cartodb.pattern}"
+      };
 
       // Init plugins
       jQuery(function(){

@@ -3,8 +3,8 @@ grails.project.class.dir = "target/classes"
 grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 grails.project.work.dir = "target/work"
-grails.project.target.level = 1.6
-grails.project.source.level = 1.6
+grails.project.target.level = 1.8
+grails.project.source.level = 1.8
 
 //grails.plugin.location."ala-bootstrap2" = "../ala-bootstrap2"
 //grails.plugin.location."collectory-plugin" = "../collectory-plugin"
@@ -34,15 +34,15 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        runtime 'mysql:mysql-connector-java:5.1.5'
+        runtime 'mysql:mysql-connector-java:5.1.42'
     }
 
     plugins {
-        runtime ":collectory:1.5.12-SNAPSHOT"
+        runtime ":collectory:1.9.0-SNAPSHOT"
         runtime ":cached-resources:1.0"
         build   ":release:3.0.1"
-        runtime ":ala-bootstrap2:2.4.2"
-        runtime (":ala-auth:1.3.3") {
+        runtime ":ala-bootstrap3:2.0.0-SNAPSHOT"
+        runtime (":ala-auth:2.2-SNAPSHOT") {
             exclude "servlet-api"
         }
         build ':tomcat:7.0.54'

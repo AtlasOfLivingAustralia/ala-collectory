@@ -90,6 +90,12 @@ if(!uploadFilePath){
 if(!uploadExternalUrlPath){
     uploadExternalUrlPath = "/upload/"
 }
+if (!gbifApiUrl) {
+    gbifApiUrl = 'http://api.gbif.org/v1'
+}
+if (!cartodb.pattern) {
+    cartodb.pattern = 'http://cartodb-basemaps-${s}.global.ssl.fastly.net/light_nolabels/${z}/${x}/${y}.png'
+}
 /******************************************************************************\
 *  RELOADABLE CONFIG
 \******************************************************************************/
@@ -155,6 +161,12 @@ if(!eml.country){
 if(!eml.electronicMailAddress){
     eml.electronicMailAddress = "info@ala.org.au"
 }
+if (!gbifApiUrl) {
+    gbifApiUrl = 'http://api.gbif.org/v1'
+}
+if (!institution.codeLoaderURL) {
+    institution.codeLoaderURL = 'file:/data/collectory/bootstrap/institution_codes.xml'
+}
 
 ///******* standard grails **********/
 grails.project.groupId = 'au.org.ala' // change this to alter the default package name and Maven publishing destination
@@ -181,6 +193,7 @@ grails.mime.types = [ html: ['text/html','application/xhtml+xml'],
 //grails.resources.uri.prefix = ''
 grails.resources.adhoc.patterns = ['/img/*', '/images/*', '/data/*', '/css/*', '/js/OpenLayers/**', '/js/**', '/plugins/**']
 grails.resources.work.dir = "/data/${appName}/cache/"
+grails.resources.resourceLocatorEnabled = true
 
 // The default codec used to encode data with ${}
 grails.views.default.codec="html" // none, html, base64
@@ -237,6 +250,7 @@ auditLog {
     TRUNCATE_LENGTH = 2048
 }
 auditLog.verbose = false
+auditLog.auditDomainClassName = 'au.org.ala.audit.AuditLogEvent'
 
 environments {
     development {

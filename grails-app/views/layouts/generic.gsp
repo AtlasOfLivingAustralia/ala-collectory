@@ -3,7 +3,11 @@
 <g:applyLayout name="main" >
     <head>
         <r:script type="text/javascript" disposition="head">
-      var COLLECTORY_CONF = { contextPath: "${request.contextPath}", locale: "${request.locale}" }
+        var COLLECTORY_CONF = {
+            contextPath: "${request.contextPath}",
+            locale: "${request.locale}",
+            cartodbPattern: "${grailsApplication.config.cartodb.pattern}"
+        };
         </r:script>
         <r:require modules="jquery, jquery-migration, jquery_i18n, bootstrap,  application, collectory" />
         <g:layoutHead/>

@@ -93,6 +93,9 @@ if(!uploadExternalUrlPath){
 if (!gbifApiUrl) {
     gbifApiUrl = 'http://api.gbif.org/v1'
 }
+if (!cartodb.pattern) {
+    cartodb.pattern = 'http://cartodb-basemaps-${s}.global.ssl.fastly.net/light_nolabels/${z}/${x}/${y}.png'
+}
 /******************************************************************************\
 *  RELOADABLE CONFIG
 \******************************************************************************/

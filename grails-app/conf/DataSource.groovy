@@ -4,7 +4,7 @@ dataSource {
     driverClassName = "com.mysql.jdbc.Driver"
     username = "root"
     password = ""
-    logSql = false
+//    logSql = true
 }
 hibernate {
     cache.use_second_level_cache=true
@@ -20,6 +20,7 @@ environments {
             url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
             username = "root"
             password = ""
+//            logSql = true
         }
     }
     test {
@@ -27,7 +28,7 @@ environments {
             dialect = org.hibernate.dialect.MySQL5InnoDBDialect
             dbCreate = "update"
             url = "jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useSSL=false"
-            logSql = false
+//            logSql = true
             username = "root"
             password = ""
             properties {

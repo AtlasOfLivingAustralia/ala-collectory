@@ -38,11 +38,11 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":collectory:1.9.0-SNAPSHOT"
+        runtime ":collectory:1.8.1"
         runtime ":cached-resources:1.0"
         build   ":release:3.0.1"
-        runtime ":ala-bootstrap3:2.0.0-SNAPSHOT"
-        runtime (":ala-auth:2.2-SNAPSHOT") {
+        runtime ":ala-bootstrap3:2.1.2"
+        runtime (":ala-auth:2.1.4") {
             exclude "servlet-api"
         }
         build ':tomcat:7.0.54'

@@ -7,9 +7,6 @@ class BootStrap {
         log.info "config.biocache.ajax.useProxy = ${grailsApplication.config.biocache.ajax.useProxy}"
         log.info "config.serverName = ${grailsApplication.config.serverName}"
         log.info "config.grails.serverURL = ${grailsApplication.config.grails.serverURL}"
-
-        //set the configured default locale
-        Locale.setDefault(Locale.forLanguageTag(grailsApplication.config.defaultLocale?:'en'))
     }
 
     def destroy = {

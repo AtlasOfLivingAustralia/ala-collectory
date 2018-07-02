@@ -1,0 +1,30 @@
+/* Fixes for newer ALA styles */
+
+#content .nav-tabs > li > a {
+    background-color: #E7E7E7;
+    border: 1px solid #BBB;
+    margin-right: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    line-height: 16px;
+    font-weight: bold;
+}
+
+#content .nav-tabs > li.active > a, #content .nav-tabs > li.active > a:hover, #content .nav-tabs > li.active > a:focus {
+    color: #555555;
+    background-color: #FFF;
+    border: 1px solid #BBB;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+
+#content .nav-tabs > li > a:hover {
+    border-color: #BBB;
+}
+
+#content .tab-content {
+    border-bottom: 1px solid #BBB;
+    border-right: 1px solid #BBB;
+    border-left: 1px solid #BBB;
+    padding: 15px;
+}

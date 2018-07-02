@@ -19,7 +19,7 @@
       });
     </r:script>
     <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="${g.createLink(uri:"/feed.xml", absolute: true)}" />
-    <r:require modules="jquery, jquery-migration, jquery_i18n, bootstrap,  application, collectory" />
+    <r:require modules="jquery, jquery-migration, jquery_i18n, bootstrap,  application, collectory, ala_additions" />
     <g:layoutHead/>
   </head>
   <body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">

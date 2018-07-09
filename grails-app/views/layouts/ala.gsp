@@ -23,6 +23,9 @@
     <g:layoutHead/>
   </head>
   <body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">
+    <plugin:isAvailable name="alaAdminPlugin">
+      <ala:systemMessage/>
+    </plugin:isAvailable>
     <div class="${fluidLayout?'container-fluid':'container'}" id="main-content">
       <g:layoutBody />
     </div><!--/.container-->

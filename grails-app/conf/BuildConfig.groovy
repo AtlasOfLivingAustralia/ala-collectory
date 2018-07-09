@@ -47,5 +47,6 @@ grails.project.dependency.resolution = {
         }
         build ':tomcat:7.0.54'
         compile ":build-info:1.2.6"
+        runtime ":ala-admin-plugin:1.2"
     }
 }

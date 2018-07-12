@@ -19,7 +19,7 @@
       });
         </r:script>
         <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="${g.createLink(uri:"/feed.xml", absolute: true)}" />
-        <r:require modules="jquery, jquery-migration, jquery_i18n, bootstrap,  application, collectory" />
+        <r:require modules="jquery, jquery_migration, jquery_i18n, bootstrap,  application, collectory" />
         <g:layoutHead/>
         <hf:head/>
     </head>

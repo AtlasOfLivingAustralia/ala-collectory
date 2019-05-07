@@ -29,13 +29,13 @@ skin.orgNameLong = "Atlas of Living Australia"
 skin.orgNameShort = "ALA"
 // whether crumb trail should include a home link that is external to this webabpp - ala.baseUrl is used if true
 skin.includeBaseUrl = true
-skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/"
+skin.taxaLinks.baseUrl = "https://bie.ala.org.au/species/"
 skin.headerUrl = "classpath:resources/generic-header.jsp" // can be external URL
 skin.footerUrl = "classpath:resources/generic-footer.jsp" // can be external URL
 skin.fluidLayout = true // true or false
 skin.useAlaSpatialPortal = true
 skin.useAlaBie = true
-skin.taxaLinks.baseUrl = "http://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
+skin.taxaLinks.baseUrl = "https://bie.ala.org.au/species/" // 3rd party species pages. Leave blank for no links
 test.var = "ala-collectory"
 
 /******************************************************************************\
@@ -58,28 +58,28 @@ auth.admin_role = "ROLE_ADMIN"
 *  EXTERNAL SERVERS
 \******************************************************************************/
 if (!bie.baseURL) {
-    bie.baseURL = "http://bie.ala.org.au/"
+    bie.baseURL = "https://bie.ala.org.au/"
 }
 if (!bie.searchPath) {
     bie.searchPath = "/search"
 }
 if (!biocacheUiURL) {
-    biocacheUiURL = "http://biocache.ala.org.au"
+    biocacheUiURL = "https://biocache.ala.org.au"
 }
 if(!biocacheServicesUrl){
-    biocacheServicesUrl = "http://biocache.ala.org.au/ws"
+    biocacheServicesUrl = "https://biocache-ws.ala.org.au/ws"
 }
 if (!spatial.baseURL) {
-    spatial.baseURL = "http://spatial.ala.org.au/"
+    spatial.baseURL = "https://spatial.ala.org.au/"
 }
 if (!ala.baseURL) {
-    ala.baseURL = "http://www.ala.org.au"
+    ala.baseURL = "https://www.ala.org.au"
 }
 if(!alertUrl){
-    alertUrl = "http://alerts.ala.org.au/"
+    alertUrl = "https://alerts.ala.org.au/"
 }
 if(!speciesListToolUrl){
-    speciesListToolUrl = "http://lists.ala.org.au/speciesListItem/list/"
+    speciesListToolUrl = "https://lists.ala.org.au/speciesListItem/list/"
 }
 if(!alertResourceName){
     alertResourceName = "Atlas"
@@ -94,7 +94,7 @@ if (!gbifApiUrl) {
     gbifApiUrl = 'http://api.gbif.org/v1'
 }
 if (!cartodb.pattern) {
-    cartodb.pattern = 'http://cartodb-basemaps-${s}.global.ssl.fastly.net/light_nolabels/${z}/${x}/${y}.png'
+    cartodb.pattern = 'https://cartodb-basemaps-${s}.global.ssl.fastly.net/light_nolabels/${z}/${x}/${y}.png'
 }
 /******************************************************************************\
 *  RELOADABLE CONFIG

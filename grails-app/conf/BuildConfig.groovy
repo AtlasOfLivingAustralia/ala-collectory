@@ -6,7 +6,7 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.8
 grails.project.source.level = 1.8
 
-//grails.plugin.location."ala-bootstrap2" = "../ala-bootstrap2"
+//grails.plugin.location."ala-bootstrap3" = "../ala-bootstrap3"
 //grails.plugin.location."collectory-plugin" = "../collectory-plugin"
 
 grails.project.fork = [

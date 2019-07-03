@@ -168,6 +168,9 @@ if (!institution.codeLoaderURL) {
     institution.codeLoaderURL = 'file:/data/collectory/bootstrap/institution_codes.xml'
 }
 
+if(!headerAndFooter.version){
+    headerAndFooter.version = "1"
+}
 ///******* standard grails **********/
 grails.project.groupId = 'au.org.ala' // change this to alter the default package name and Maven publishing destination
 grails.mime.file.extensions = true // enables the parsing of file extensions from URLs into the request format

@@ -6,6 +6,8 @@
     <g:set var="fluidLayout" value="${pageProperty(name:'meta.fluidLayout')?:grailsApplication.config.skin?.fluidLayout}"/>
     <meta name="breadcrumb" content="${pageProperty(name: 'meta.breadcrumb', default: pageProperty(name: 'title').split('\\|')[0].decodeHTML())}"/>
     <meta name="breadcrumbParent" content="${pageProperty(name: 'meta.breadcrumbParent', default: "${createLink(action: 'map', controller: 'public')},${message(code: 'breadcrumb.collections')}")}"/>
+    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="${g.createLink(uri:"/feed.xml", absolute: true)}" />
+    <r:require modules="core, ala, bootstrap, collectory, ala_additions" />
     <r:script type="text/javascript" disposition="head">
       var COLLECTORY_CONF = {
         contextPath: "${request.contextPath}",
@@ -18,8 +20,6 @@
           $('.helphover').popover({animation: true, trigger:'hover'});
       });
     </r:script>
-    <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="${g.createLink(uri:"/feed.xml", absolute: true)}" />
-    <r:require modules="jquery, jquery_migration, jquery_i18n, bootstrap, application, collectory, ala_additions" />
     <g:layoutHead/>
   </head>
   <body class="${pageProperty(name:'body.class')?:'nav-collections'}" id="${pageProperty(name:'body.id')}" onload="${pageProperty(name:'body.onload')}">

@@ -6,7 +6,7 @@ grails.project.work.dir = "target/work"
 grails.project.target.level = 1.8
 grails.project.source.level = 1.8
 
-//grails.plugin.location."ala-bootstrap2" = "../ala-bootstrap2"
+//grails.plugin.location."ala-bootstrap3" = "../ala-bootstrap3"
 //grails.plugin.location."collectory-plugin" = "../collectory-plugin"
 
 grails.project.fork = [
@@ -34,12 +34,12 @@ grails.project.dependency.resolution = {
     }
 
     dependencies {
-        runtime 'mysql:mysql-connector-java:5.1.42'
+        runtime 'mysql:mysql-connector-java:5.1.44'
     }
 
     plugins {
-        runtime ":collectory:1.9.5"
-        runtime ":ala-bootstrap3:2.1.2"
+        runtime ":collectory:1.9.7-SNAPSHOT"
+        runtime ":ala-bootstrap3:2.2.0-SNAPSHOT"
         runtime ":resources:1.2.14"
         runtime ":cached-resources:1.0"
         build   ":release:3.1.2"

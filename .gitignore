@@ -32,3 +32,9 @@ web-app/images/skin/sorted_desc.gif
 web-app/images/spinner.gif
 
 web-app/images/springsource.png
+
+*/*.debhelper
+*/*.debhelper.log
+*.buildinfo
+*.substvars
+debian/files

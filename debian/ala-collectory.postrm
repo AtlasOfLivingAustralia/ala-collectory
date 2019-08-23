@@ -6,5 +6,4 @@
 # has been removed
 #
 
-echo ${appName}-${appVersion} removed.
-
+echo ala-collectory removed.

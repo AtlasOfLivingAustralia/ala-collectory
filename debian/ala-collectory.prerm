@@ -13,5 +13,4 @@
 #rm -rf /opt/${appName}/logs/*
 #
 
-echo Removing ${appName}-${appVersion}
-
+echo Removing ala-collectory

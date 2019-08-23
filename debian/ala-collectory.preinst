@@ -27,7 +27,4 @@
 #          ${user} >/dev/null
 #fi
 
-
-echo Installing ${appName}-${appVersion}
-
-
+echo Installing ala-collectory

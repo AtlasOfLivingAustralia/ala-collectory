@@ -26,5 +26,4 @@ case "$1" in
     ;;
 esac
 
-echo ${appName}-${appVersion} installed
-
+echo ala-collectory installed

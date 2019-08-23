@@ -1,0 +1,6 @@
+target/ala-collectory.war usr/share/tomcat7-ala-collectory/
+debian/context/tomcat7-ala-collectory.xml /etc/tomcat7/Catalina/localhost/
+debian/data/ala-collectory/config/ala-collectory-config.properties /data/ala-collectory/config
+# Just an example of db install and update via debian
+# mysql.sql usr/share/dbconfig-common/data/ala-collectory/install/mysql
+# mysql-upgrade_2.1.sql usr/share/dbconfig-common/data/ala-collectory/upgrade/mysql/2.1

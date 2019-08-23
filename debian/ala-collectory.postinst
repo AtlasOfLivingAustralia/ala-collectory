@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+. /usr/share/debconf/confmodule
+
+case "$1" in
+    configure)
+        db_version 2.0
+        db_get tomcat7/username && TOMCAT7_USER="$RET"
+        db_get tomcat7/groupname && TOMCAT7_GROUP="$RET"
+        if id -u $TOMCAT7_USER > /dev/null 2>&1; then
+            chown -Rh $TOMCAT7_USER:$TOMCAT7_GROUP /data/ala-collectory
+        fi
+    ;;
+esac
+
+#DEBHELPER#

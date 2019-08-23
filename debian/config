@@ -1,0 +1,14 @@
+#!/bin/sh
+# https://www.debian.org/doc/manuals/dbconfig-common/ch-develguide.html
+#
+# config maintainer script for ala-collectory
+
+# source debconf stuff
+. /usr/share/debconf/confmodule
+# source dbconfig-common shell library, and call the hook function
+if [ -f /usr/share/dbconfig-common/dpkg/config.mysql ]; then
+    . /usr/share/dbconfig-common/dpkg/config.mysql
+    dbc_go ala-collectory "$@"
+fi
+
+# ... rest of your code ...

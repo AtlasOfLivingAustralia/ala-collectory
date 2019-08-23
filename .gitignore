@@ -38,3 +38,4 @@ web-app/images/springsource.png
 *.buildinfo
 *.substvars
 debian/files
+debian/ala-collectory

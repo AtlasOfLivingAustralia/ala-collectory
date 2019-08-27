@@ -13,7 +13,7 @@ Vcs-Git: https://github.com/AtlasOfLivingAustralia/ala-collectory.git
 
 Package: ala-collectory
 Architecture: all
-Depends: ${misc:Depends}, java8-sdk, ca-certificates, tomcat7, libtcnative-1, mysql-server-5.7, python-mysqldb, dbconfig-mysql | dbconfig-no-thanks
+Depends: ${misc:Depends}, openjdk-8-jdk, ca-certificates, tomcat7, libtcnative-1, mysql-server-5.7, python-mysqldb, dbconfig-mysql | dbconfig-no-thanks
 Suggests: apache2 | nginx
 Description: The ala-collectory ALA module application
  This package contains the ala-collectory package from

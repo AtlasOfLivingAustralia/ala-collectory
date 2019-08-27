@@ -1,3 +1,9 @@
+ala-collectory (1.6.2-3) unstable; urgency=medium
+
+  * Improved java dep
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Tue, 27 Aug 2019 18:44:06 +0200
+
 ala-collectory (1.6.2-2) unstable; urgency=medium
 
   * Added some db vars

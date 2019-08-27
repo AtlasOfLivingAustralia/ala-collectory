@@ -7,6 +7,8 @@ debuild -us -uc -b
 ```
 in the parent of this directory. This will generate the deb file in the parent directory of this repository.
 
+You can increase changelog version and comments with `dch` utility, like with `dch -i` that increase minor version.
+
 ## Testing
 
 You can test the generated package without installit with `piuparts` like:

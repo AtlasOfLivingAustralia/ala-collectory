@@ -13,4 +13,8 @@
 #rm -rf /opt/${appName}/logs/*
 #
 
+. /usr/share/debconf/confmodule
+. /usr/share/dbconfig-common/dpkg/prerm.mysql
+dbc_go ala-collectory "$@"
+
 echo Removing ala-collectory

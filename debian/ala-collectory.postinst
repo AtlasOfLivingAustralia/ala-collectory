@@ -25,5 +25,12 @@ case "$1" in
         fi
     ;;
 esac
+. /usr/share/dbconfig-common/dpkg/postinst.mysql
+
+# you can set the default database encoding to something else
+dbc_mysql_createdb_encoding="UTF8"
+dbc_go ala-collectory "$@"
+
+
 
 echo ala-collectory installed

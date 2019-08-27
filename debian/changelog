@@ -1,3 +1,9 @@
+ala-collectory (1.6.2-4) unstable; urgency=medium
+
+  * Improved postinst/postrm/prerm of package
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Tue, 27 Aug 2019 19:35:37 +0200
+
 ala-collectory (1.6.2-3) unstable; urgency=medium
 
   * Improved java dep

@@ -8,6 +8,9 @@
 # source dbconfig-common shell library, and call the hook function
 if [ -f /usr/share/dbconfig-common/dpkg/config.mysql ]; then
     . /usr/share/dbconfig-common/dpkg/config.mysql
+    dbc_dbuser=collectory
+    dbc_dbname=collectory
+    dbc_mysql_createdb_encoding="UTF8"
     dbc_go ala-collectory "$@"
 fi
 

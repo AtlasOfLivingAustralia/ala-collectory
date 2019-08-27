@@ -1,3 +1,9 @@
+ala-collectory (1.6.2-5) unstable; urgency=medium
+
+  * Renamed debian/files
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Tue, 27 Aug 2019 19:44:21 +0200
+
 ala-collectory (1.6.2-4) unstable; urgency=medium
 
   * Improved postinst/postrm/prerm of package

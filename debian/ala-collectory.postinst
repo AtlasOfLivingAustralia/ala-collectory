@@ -29,6 +29,10 @@ esac
 
 # you can set the default database encoding to something else
 dbc_mysql_createdb_encoding="UTF8"
+dbc_generate_include=sh:/data/ala-collectory/config/ala-collectory-db-config.properties
+dbc_generate_include_owner=tomcat7
+dbc_generate_include_perms=0400
+
 dbc_go ala-collectory "$@"
 
 

@@ -46,9 +46,9 @@ skin.fluidLayout=
 chartsBgColour=#fffef7
 
 # DB config
-dataSource.username=collectory
-dataSource.password=password
-dataSource.url=jdbc:mysql://localhost:3306/collectory?autoReconnect=true&connectTimeout=0&useUnicode=true&characterEncoding=UTF-8
+dataSource.username=_DBC_DBUSER_
+dataSource.password=_DBC_DBPASS_
+dataSource.url=jdbc:mysql://_DBC_DBSERVER_:3306/_DBC_DBNAME_?autoReconnect=true&connectTimeout=0&useUnicode=true&characterEncoding=UTF-8
 
 # Map config
 collectionsMap.centreMapLon=1.261

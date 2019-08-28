@@ -9,6 +9,16 @@ in the parent of this directory. This will generate the deb file in the parent d
 
 You can increase changelog version and comments with `dch` utility, like with `dch -i` that increase minor version.
 
+Add to your .gitignore:
+```
+*/*.debhelper
+*/*.debhelper.log
+*.buildinfo
+*.substvars
+debian/files
+debian/ala-collectory
+```
+
 ## Looking for inspiration?
 
 You can see [tomcat7-examples package source](https://salsa.debian.org/java-team/tomcat7/tree/master/debian) for inspiration of tomcat7 packages and also about how to create multiple debian packages from a same source repository.

@@ -9,9 +9,15 @@ in the parent of this directory. This will generate the deb file in the parent d
 
 You can increase changelog version and comments with `dch` utility, like with `dch -i` that increase minor version.
 
+## Looking for inspiration?
+
+You can see [tomcat7-examples package source](https://salsa.debian.org/java-team/tomcat7/tree/master/debian) for inspiration of tomcat7 packages and also about how to create multiple debian packages from a same source repository.
+
+Also `dbconfig-common` package have some samples in `/usr/share/doc/dbconfig-common/examples/` for mysql and postgresql debian configuration tasks for packages.
+
 ## Testing
 
-You can test the generated package without installit with `piuparts` like:
+You can test the generated package without install it with `piuparts` like:
 
 ```bash
 sudo piuparts -D ubuntu -d xenial -d bionic ../ala-collectory_1.6.2-1_all.deb
@@ -38,3 +44,5 @@ EOF
 export DEBCONF_FRONTEND=noninteractive
 apt-get install -yq --force-yes ala-collectory
 ```
+
+Also you can install `dbconfig-no-thanks` to avoid db questions.

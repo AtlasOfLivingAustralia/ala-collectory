@@ -1,3 +1,16 @@
+ala-collectory (1.6.2-9) unstable; urgency=medium
+
+  * Using correct ALA skin by default
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Thu, 29 Aug 2019 00:23:06 +0200
+
+ala-collectory (1.6.2-8) unstable; urgency=medium
+
+  * Renamed context to plain /ala-collectory directory
+  * Using ALA skin by default
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Wed, 28 Aug 2019 21:44:07 +0200
+
 ala-collectory (1.6.2-7) unstable; urgency=medium
 
   * Generate config via template with db info

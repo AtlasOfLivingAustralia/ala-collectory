@@ -76,7 +76,7 @@ skin.favicon=https://www.gbif.org/favicon.ico
 orgNameLong=Living Atlas Of Wakanda
 
 # Header and footer
-headerAndFooter.baseURL=http://living-atlas.org
+headerAndFooter.baseURL=https://www.ala.org.au/commonui-bs3
 headerAndFooter.version=1
 
 ala.baseURL=http://living-atlas.org

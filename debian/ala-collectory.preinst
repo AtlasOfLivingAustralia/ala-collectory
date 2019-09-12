@@ -27,4 +27,6 @@
 #          ${user} >/dev/null
 #fi
 
+#DEBHELPER#
+
 echo Installing ala-collectory

@@ -17,4 +17,6 @@
 . /usr/share/dbconfig-common/dpkg/prerm.mysql
 dbc_go ala-collectory "$@"
 
+#DEBHELPER#
+
 echo Removing ala-collectory

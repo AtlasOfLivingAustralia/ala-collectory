@@ -1,22 +1,22 @@
-grails.serverURL=http://collections.living-atlas.org
-serverName=http://collections.living-atlas.org
+grails.serverURL=http://collections.l-a.site
+serverName=http://collections.l-a.site
 grails.cors.enabled=true
 grails.resources.adhoc.patterns=['/images/*', '/data/*', '/img/*', '/theme/default/*', '/css/*', '/js/*', '/plugins/*' ]
 # CAS Config
-security.cas.casServerName=http://auth.living-atlas.org
+security.cas.casServerName=http://auth.l-a.site
 security.cas.uriFilterPattern=/admin.*,/admin/.*,/admin/.*/.*,/collection.*,/institution.*,/contact.*,/reports.*,/providerCode.*,/providerMap.*,/dataProvider.*,/dataResource.*,/dataHub.*,/manage/.*,/ws/ipt/scan/.*
 security.cas.authenticateOnlyIfLoggedInFilterPattern=/public/show.*
 security.cas.uriExclusionFilterPattern=/images.*,/css.*,/js.*
-security.cas.appServerName=http://collections.living-atlas.org
-security.cas.casServerUrlPrefix=http://auth.living-atlas.org/cas
-security.cas.casServerLoginUrl=http://auth.living-atlas.org/cas/login
-security.cas.casServerLogoutUrl=http://auth.living-atlas.org/cas/logout
-security.cas.loginUrl=http://auth.living-atlas.org/cas/login
-security.cas.logoutUrl=http://auth.living-atlas.org/cas/logout
+security.cas.appServerName=http://collections.l-a.site
+security.cas.casServerUrlPrefix=http://auth.l-a.site/cas
+security.cas.casServerLoginUrl=http://auth.l-a.site/cas/login
+security.cas.casServerLogoutUrl=http://auth.l-a.site/cas/logout
+security.cas.loginUrl=http://auth.l-a.site/cas/login
+security.cas.logoutUrl=http://auth.l-a.site/cas/logout
 
 security.cas.contextPath=
 
-security.apikey.serviceUrl=https://auth.living-atlas.org/apikey/ws/check?apikey=
+security.apikey.serviceUrl=https://auth.ala.org.au/apikey/ws/check?apikey=
 security.apikey.checkEnabled=false
 
 # Default Locale
@@ -36,8 +36,8 @@ google.apikey=
 api_key=to_be_added
 
 # Biocache integration
-biocacheUiURL=http://biocache.living-atlas.org
-biocacheServicesUrl=http://biocache.living-atlas.org/ws
+biocacheUiURL=http://biocache.l-a.site
+biocacheServicesUrl=http://biocache-ws.l-a.site
 
 # Skinning
 ala.skin=ala
@@ -69,7 +69,7 @@ eml.postalCode=S21 2SS
 eml.country=Spain
 
 # The name displayed top left of header
-skin.homeUrl = http://living-atlas.org
+skin.homeUrl = http://l-a.site
 skin.orgNameLong=Living Atlas Of Wakanda
 skin.orgNameShort=LA Wakanda
 skin.favicon=https://www.gbif.org/favicon.ico
@@ -79,8 +79,8 @@ orgNameLong=Living Atlas Of Wakanda
 headerAndFooter.baseURL=https://www.ala.org.au/commonui-bs3-2019
 headerAndFooter.version=1
 
-ala.baseURL=http://living-atlas.org
-bie.baseURL=http://living-atlas.org/species
+ala.baseURL=http://l-a.site
+bie.baseURL=http://species.l-a.site
 bie.searchPath=/search
 
 # Disable UI components
@@ -92,11 +92,11 @@ disableLoggerLinks=false
 rifcs.excludeBounds=false
 
 # Logger URL
-loggerURL=http://living-atlas.org/logger-service/service
+loggerURL=http://logger.l-a.site/service
 
 # External services
 alertUrl=
-speciesListToolUrl=http://living-atlas.org/specieslists
+speciesListToolUrl=http://lists.l-a.site
 
 # GBIF base URL for webservices
 gbifApiUrl=http://api.gbif.org/v1
@@ -112,9 +112,9 @@ gbifApiPassword=
 gbifExportUrlBase=
 useGbifDoi=false
 gbifRegistrationDryRun=true
-gbifLicenceMappingUrl=
+gbifLicenceMappingUrl=file:///data/ala-collectory/config/default-gbif-licence-mapping.json
 gbifOrphansPublisherID=
 
 # URL paths for archives
-resource.publicArchive.url.template = https://biocache.living-atlas.org/archives/gbif/@UID@/@UID@.zip
-resource.gbifExport.url.template = https://biocache.living-atlas.org/archives/gbif/@UID@/@UID@.zip
+resource.publicArchive.url.template = https://biocache.l-a.site/archives/gbif/@UID@/@UID@.zip
+resource.gbifExport.url.template = https://biocache.l-a.site/archives/gbif/@UID@/@UID@.zip

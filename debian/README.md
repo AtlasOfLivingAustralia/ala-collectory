@@ -62,3 +62,7 @@ Also you can install `dbconfig-no-thanks` to avoid db questions.
 - [ ] Check if can be installed with other ALA packages without collitions (for instance in /data).
 - [ ] remove `/etc/tomcat7/Catalina/localhost/ala-collectory.xml` and `/var/lib/tomcat7/webapps/tomcat7-ala-collectory/` on postrm?
 - [ ] `JAVA_OPTS="${JAVA_OPTS} -Xmx2g -Xms2g -Xss256k -Djava.awt.headless=true"`
+
+## Code duplicated
+
+- From `ala-install` all `ansible/roles/collectory/files/`

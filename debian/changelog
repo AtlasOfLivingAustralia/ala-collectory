@@ -1,3 +1,10 @@
+ala-collectory (1.6.2-12) unstable; urgency=medium
+
+  * Added some missing config files and taxa.json
+  * Config updated
+
+ -- Vicente J. Ruiz Jurado <vjrj@ourproject.org>  Wed, 18 Sep 2019 21:38:07 +0200
+
 ala-collectory (1.6.2-11) unstable; urgency=medium
 
   * Added missing DEBHELPER

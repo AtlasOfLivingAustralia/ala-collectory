@@ -4,7 +4,11 @@ import au.org.ala.collectory.ExtendedPluginAwareResourceBundleMessageSource
 beans = {
     // Custom message source
     messageSource(ExtendedPluginAwareResourceBundleMessageSource) {
-        basenames = ["WEB-INF/grails-app/i18n/messages"] as String[]
+        basenames = [
+                "file:///var/opt/atlas/i18n/collectory-plugin/messages",
+                "file:///opt/atlas/i18n/collectory-plugin/messages",
+                "WEB-INF/grails-app/i18n/messages"
+        ] as String[]
         cacheSeconds = (60 * 60 * 6) // 6 hours
         useCodeAsDefaultMessage = false
     }

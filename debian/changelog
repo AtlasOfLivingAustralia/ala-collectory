@@ -1,3 +1,9 @@
+ala-collectory (1.6.3-3ubuntu1) unstable; urgency=medium
+
+  * Fix deps typo
+
+ -- Vicente J. Ruiz Jurado <vjrj@gbif.es>  Wed, 10 Jun 2020 16:21:42 +0200
+
 ala-collectory (1.6.3-3) unstable; urgency=medium
 
   * Deps reorganization

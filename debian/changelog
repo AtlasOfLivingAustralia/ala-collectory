@@ -1,3 +1,9 @@
+ala-collectory (1.6.3-5) unstable; urgency=medium
+
+  * Point to localhost:8080 for initial testing
+
+ -- Vicente J. Ruiz Jurado <vjrj@gbif.es>  Thu, 11 Jun 2020 08:59:30 +0200
+
 ala-collectory (1.6.3-4) unstable; urgency=medium
 
   * Fix deps typo

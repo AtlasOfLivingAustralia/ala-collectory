@@ -38,7 +38,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":collectory:1.9.9"
+        runtime ":collectory:1.9.10-SNAPSHOT"
         runtime ":ala-bootstrap3:2.2.0"
         runtime ":resources:1.2.14"
         runtime ":cached-resources:1.0"

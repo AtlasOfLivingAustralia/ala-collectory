@@ -266,7 +266,7 @@ environments {
     }
 }
 
-def loggingDir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat6')
+def loggingDir = (System.getProperty('catalina.base') ? System.getProperty('catalina.base') + '/logs'  : '/var/log/tomcat7')
 if(!new File(loggingDir).exists()){
     loggingDir = "/tmp"
 }

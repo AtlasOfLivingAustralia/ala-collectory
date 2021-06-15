@@ -119,6 +119,8 @@ if (!citation.rights.template) {
 if (!resource.publicArchive.url.template) {
     resource.publicArchive.url.template = "${biocacheUiURL}/archives/@UID@/@UID@_ror_dwca.zip"
 }
+
+cors.allow.origin.regex = '^https?:\\/\\/.+\\.ala\\.org\\.au\\/?'
 /******************************************************************************\
 *  ADDITIONAL CONFIG
 \******************************************************************************/

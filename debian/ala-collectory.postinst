@@ -1,0 +1,43 @@
+#!/bin/sh
+
+#######################################################
+#
+# Add here the commands to be excuted after the package
+# has been installed
+#
+
+#Example: create some symbolic links
+#
+#chown -R ${user}:${group} /opt/${appName}-${appVersion}
+#ln -s /opt/${appName}-${appVersion} /opt/${appName}
+
+set -e
+
+. /usr/share/debconf/confmodule
+
+#DEBHELPER#
+
+case "$1" in
+    configure)
+        db_version 2.0
+        db_get tomcat7/username && TOMCAT7_USER="$RET"
+        db_get tomcat7/groupname && TOMCAT7_GROUP="$RET"
+        if id -u $TOMCAT7_USER > /dev/null 2>&1; then
+            chown -Rh $TOMCAT7_USER:$TOMCAT7_GROUP /data/ala-collectory
+        fi
+    ;;
+esac
+. /usr/share/dbconfig-common/dpkg/postinst.mysql
+
+# you can set the default database encoding to something else
+dbc_mysql_createdb_encoding="UTF8"
+# Generate configuration with db info using a template
+dbc_generate_include=template:/data/ala-collectory/config/ala-collectory-config.properties
+dbc_generate_include_owner=tomcat7:tomcat7
+dbc_generate_include_perms=0644
+dbc_generate_include_args="-o template_infile=/data/ala-collectory/config/ala-collectory-config.template -U"
+dbc_go ala-collectory "$@"
+
+
+
+echo ala-collectory installed

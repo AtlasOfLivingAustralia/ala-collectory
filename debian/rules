@@ -1,0 +1,33 @@
+#!/usr/bin/make -f
+
+# https://www.debian.org/doc/manuals/maint-guide/dreq.en.html#rules
+# See also:
+#
+# man debhelper
+# man dh
+
+# Uncomment this to turn on verbose mode.
+# export DH_VERBOSE=1
+
+CURVERSION = $(shell awk -F'=' '/app.version/ { print $$2 }' application.properties)
+
+%:
+	dh $@
+
+build:
+#       Do a `grails prod war` previous to build the debian package
+
+#	install don't allow to rename files (like wars), so we copy here the file we want to install with the package
+	cp $(CURDIR)/target/ala-collectory-$(CURVERSION).war $(CURDIR)/target/ala-collectory.war
+
+override_dh_fixperms:
+	dh_fixperms
+#	If we need to set some special perms to a file
+#	chmod 4755 debian/foo/usr/bin/foo
+#	Also we use postinstall for this
+
+override_dh_install:
+	dh_install # calls default *.install and *.dirs installation
+#	man install
+
+.PHONY: build

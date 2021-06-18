@@ -1,0 +1,11 @@
+target/ala-collectory.war usr/share/ala-collectory/
+debian/context/ala-collectory.xml /etc/tomcat7/Catalina/localhost/
+debian/data/ala-collectory/config/ala-collectory-config.template /data/ala-collectory/config
+debian/data/ala-collectory/config/charts.json /data/ala-collectory/config
+debian/data/ala-collectory/config/connection-profiles.json /data/ala-collectory/config
+debian/data/ala-collectory/config/default-gbif-licence-mapping.json /data/ala-collectory/config
+debian/data/ala-collectory/data/taxa/taxa.json  /data/ala-collectory/data/taxa/
+
+# Just an example of db install and update via debian
+# mysql.sql usr/share/dbconfig-common/data/ala-collectory/install/mysql
+# mysql-upgrade_2.1.sql usr/share/dbconfig-common/data/ala-collectory/upgrade/mysql/2.1

@@ -28,3 +28,7 @@
     border-left: 1px solid #BBB;
     padding: 15px;
 }
+
+#main-content div.btn-toolbar ul.btn-group { padding-inline-start: 0px !important;}
+
+#adminTools { padding-bottom: 30px; }

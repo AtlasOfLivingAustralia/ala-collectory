@@ -91,11 +91,19 @@ if(!uploadExternalUrlPath){
     uploadExternalUrlPath = "/upload/"
 }
 if (!gbifApiUrl) {
-    gbifApiUrl = 'http://api.gbif.org/v1'
+    gbifApiUrl = 'http://api.gbif.org/v1/'
+}
+if (!gbifUniqueKeyTerm){
+    // for pipelines, this needs to be a full URL
+    gbifUniqueKeyTerm = "http://rs.gbif.org/terms/1.0/gbifID"
+
+    // for biocache-store
+    //gbifUniqueKeyTerm = "gbifID"
 }
 if (!cartodb.pattern) {
     cartodb.pattern = 'https://cartodb-basemaps-${s}.global.ssl.fastly.net/light_nolabels/${z}/${x}/${y}.png'
 }
+
 /******************************************************************************\
 *  RELOADABLE CONFIG
 \******************************************************************************/
